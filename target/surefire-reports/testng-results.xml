@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-05-26T14:01:30 IST" name="Suite" finished-at="2024-05-26T14:03:06 IST" duration-ms="96558">
+    <groups>
+    </groups>
+    <test started-at="2024-05-26T14:01:30 IST" name="Test" finished-at="2024-05-26T14:03:06 IST" duration-ms="96558">
+      <class name="Testcase.MakeMytripSearch">
+        <test-method is-config="true" signature="Launch()[pri:0, instance:Testcase.MakeMytripSearch@30ee2816]" started-at="2024-05-26T14:01:28 IST" name="Launch" finished-at="2024-05-26T14:01:30 IST" duration-ms="1823" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Launch -->
+        <test-method is-config="true" signature="EnterURL()[pri:0, instance:Testcase.MakeMytripSearch@30ee2816]" started-at="2024-05-26T14:01:30 IST" name="EnterURL" finished-at="2024-05-26T14:01:33 IST" duration-ms="2921" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EnterURL -->
+        <test-method is-config="true" signature="Closepopup()[pri:0, instance:Testcase.MakeMytripSearch@30ee2816]" started-at="2024-05-26T14:01:33 IST" name="Closepopup" finished-at="2024-05-26T14:01:34 IST" duration-ms="689" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Closepopup -->
+        <test-method signature="SearchFlightWithValidCountry(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Testcase.MakeMytripSearch@30ee2816]" started-at="2024-05-26T14:01:34 IST" name="SearchFlightWithValidCountry" data-provider="GetValidSearchData" finished-at="2024-05-26T14:01:39 IST" duration-ms="4962" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[PNQ]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[MAA]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SearchFlightWithValidCountry -->
+        <test-method is-config="true" signature="WriteInReport(org.testng.ITestResult)[pri:0, instance:Testcase.MakeMytripSearch@30ee2816]" started-at="2024-05-26T14:01:39 IST" name="WriteInReport" finished-at="2024-05-26T14:01:39 IST" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=SearchFlightWithValidCountry status=SUCCESS method=MakeMytripSearch.SearchFlightWithValidCountry(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Testcase.MakeMytripSearch@30ee2816] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- WriteInReport -->
+        <test-method signature="SearchFlightWithValidCountry(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Testcase.MakeMytripSearch@30ee2816]" started-at="2024-05-26T14:01:39 IST" name="SearchFlightWithValidCountry" data-provider="GetValidSearchData" finished-at="2024-05-26T14:01:47 IST" duration-ms="8206" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[MAA]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[BOM]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[25]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SearchFlightWithValidCountry -->
+        <test-method is-config="true" signature="WriteInReport(org.testng.ITestResult)[pri:0, instance:Testcase.MakeMytripSearch@30ee2816]" started-at="2024-05-26T14:01:47 IST" name="WriteInReport" finished-at="2024-05-26T14:01:47 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=SearchFlightWithValidCountry status=SUCCESS method=MakeMytripSearch.SearchFlightWithValidCountry(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Testcase.MakeMytripSearch@30ee2816] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- WriteInReport -->
+        <test-method signature="SearchFlightWithValidCountry(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Testcase.MakeMytripSearch@30ee2816]" started-at="2024-05-26T14:01:47 IST" name="SearchFlightWithValidCountry" data-provider="GetValidSearchData" finished-at="2024-05-26T14:01:56 IST" duration-ms="8845" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[GOI]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[PNQ]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[17]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SearchFlightWithValidCountry -->
+        <test-method is-config="true" signature="WriteInReport(org.testng.ITestResult)[pri:0, instance:Testcase.MakeMytripSearch@30ee2816]" started-at="2024-05-26T14:01:56 IST" name="WriteInReport" finished-at="2024-05-26T14:01:56 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=SearchFlightWithValidCountry status=SUCCESS method=MakeMytripSearch.SearchFlightWithValidCountry(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Testcase.MakeMytripSearch@30ee2816] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- WriteInReport -->
+        <test-method signature="SameCityErroValidation(java.lang.String,java.lang.String)[pri:1, instance:Testcase.MakeMytripSearch@30ee2816]" started-at="2024-05-26T14:01:56 IST" name="SameCityErroValidation" data-provider="SameCityValidationData" finished-at="2024-05-26T14:01:58 IST" duration-ms="1794" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[MAA]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[MAA]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SameCityErroValidation -->
+        <test-method is-config="true" signature="WriteInReport(org.testng.ITestResult)[pri:0, instance:Testcase.MakeMytripSearch@30ee2816]" started-at="2024-05-26T14:01:58 IST" name="WriteInReport" finished-at="2024-05-26T14:01:58 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=SameCityErroValidation status=SUCCESS method=MakeMytripSearch.SameCityErroValidation(java.lang.String,java.lang.String)[pri:1, instance:Testcase.MakeMytripSearch@30ee2816] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- WriteInReport -->
+        <test-method signature="SameCityErroValidation(java.lang.String,java.lang.String)[pri:1, instance:Testcase.MakeMytripSearch@30ee2816]" started-at="2024-05-26T14:01:58 IST" name="SameCityErroValidation" data-provider="SameCityValidationData" finished-at="2024-05-26T14:01:59 IST" duration-ms="754" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[PNQ]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[PNQ]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SameCityErroValidation -->
+        <test-method is-config="true" signature="WriteInReport(org.testng.ITestResult)[pri:0, instance:Testcase.MakeMytripSearch@30ee2816]" started-at="2024-05-26T14:01:59 IST" name="WriteInReport" finished-at="2024-05-26T14:01:59 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=SameCityErroValidation status=SUCCESS method=MakeMytripSearch.SameCityErroValidation(java.lang.String,java.lang.String)[pri:1, instance:Testcase.MakeMytripSearch@30ee2816] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- WriteInReport -->
+        <test-method signature="SameCityErroValidation(java.lang.String,java.lang.String)[pri:1, instance:Testcase.MakeMytripSearch@30ee2816]" started-at="2024-05-26T14:01:59 IST" name="SameCityErroValidation" data-provider="SameCityValidationData" finished-at="2024-05-26T14:02:00 IST" duration-ms="892" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[GOI]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[GOI]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SameCityErroValidation -->
+        <test-method is-config="true" signature="WriteInReport(org.testng.ITestResult)[pri:0, instance:Testcase.MakeMytripSearch@30ee2816]" started-at="2024-05-26T14:02:00 IST" name="WriteInReport" finished-at="2024-05-26T14:02:00 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=SameCityErroValidation status=SUCCESS method=MakeMytripSearch.SameCityErroValidation(java.lang.String,java.lang.String)[pri:1, instance:Testcase.MakeMytripSearch@30ee2816] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- WriteInReport -->
+        <test-method is-config="true" signature="Teardown()[pri:0, instance:Testcase.MakeMytripSearch@30ee2816]" started-at="2024-05-26T14:03:07 IST" name="Teardown" finished-at="2024-05-26T14:03:07 IST" duration-ms="547" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Teardown -->
+      </class> <!-- Testcase.MakeMytripSearch -->
+      <class name="Testcase.MakeMytriproundTrip">
+        <test-method is-config="true" signature="ClosepopupAndSelectRoundTrip()[pri:0, instance:Testcase.MakeMytriproundTrip@636be97c]" started-at="2024-05-26T14:02:00 IST" name="ClosepopupAndSelectRoundTrip" finished-at="2024-05-26T14:03:00 IST" duration-ms="60595" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ClosepopupAndSelectRoundTrip -->
+        <test-method signature="SearchFlightWithValidCountry()[pri:0, instance:Testcase.MakeMytriproundTrip@636be97c]" started-at="2024-05-26T14:03:00 IST" name="SearchFlightWithValidCountry" finished-at="2024-05-26T14:03:04 IST" duration-ms="3610" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SearchFlightWithValidCountry -->
+        <test-method is-config="true" signature="WriteInReport(org.testng.ITestResult)[pri:0, instance:Testcase.MakeMytriproundTrip@636be97c]" started-at="2024-05-26T14:03:04 IST" name="WriteInReport" finished-at="2024-05-26T14:03:04 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=SearchFlightWithValidCountry status=SUCCESS method=MakeMytriproundTrip.SearchFlightWithValidCountry()[pri:0, instance:Testcase.MakeMytriproundTrip@636be97c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- WriteInReport -->
+        <test-method signature="SameCityErroValidation()[pri:1, instance:Testcase.MakeMytriproundTrip@636be97c]" started-at="2024-05-26T14:03:04 IST" name="SameCityErroValidation" finished-at="2024-05-26T14:03:06 IST" duration-ms="2604" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SameCityErroValidation -->
+        <test-method is-config="true" signature="WriteInReport(org.testng.ITestResult)[pri:0, instance:Testcase.MakeMytriproundTrip@636be97c]" started-at="2024-05-26T14:03:06 IST" name="WriteInReport" finished-at="2024-05-26T14:03:06 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=SameCityErroValidation status=SUCCESS method=MakeMytriproundTrip.SameCityErroValidation()[pri:1, instance:Testcase.MakeMytriproundTrip@636be97c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- WriteInReport -->
+      </class> <!-- Testcase.MakeMytriproundTrip -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

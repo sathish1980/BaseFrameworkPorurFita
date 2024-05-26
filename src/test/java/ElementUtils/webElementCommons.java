@@ -1,9 +1,14 @@
 package ElementUtils;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -119,5 +124,24 @@ public class webElementCommons {
 				}
 			}
 		}
+	}
+	
+	public void ClickOnRadioButton(WebElement radio)
+	{
+		radio.click();
+	}
+	
+	public static String Screenshot(WebDriver driver,String filename)
+	{
+		TakesScreenshot tk =(TakesScreenshot) driver;
+		File sourceFile = tk.getScreenshotAs(OutputType.FILE);
+		File destinationFile = new File(System.getProperty("user.dir")+"//Screenshot//"+filename+".png");
+		try {
+			FileUtils.copyFile(sourceFile, destinationFile);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	return destinationFile.toString();
 	}
 }

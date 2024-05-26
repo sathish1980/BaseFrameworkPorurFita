@@ -13,6 +13,9 @@ import com.aventstack.extentreports.Status;
 
 import Browsers.BrowserLaunch;
 import ElementUtils.webElementCommons;
+import Pages.MakeMyTripOneWaySearchPage;
+import Pages.SearchReultPage;
+import Utils.ExcelFileRead;
 import Utils.propertyFile;
 
 public class MakeMytripSearch extends BrowserLaunch{
@@ -35,11 +38,15 @@ public class MakeMytripSearch extends BrowserLaunch{
 	{
 		webElementCommons.CloseLoginPopup(browser);
 	}
-	@Test(priority=0)
-	public void SearchFlightWithValidCountry()
+	
+	String filePath =null;
+	int count=0;
+	@Test(priority=0,dataProvider="GetValidSearchData",dataProviderClass=MakeMytripDataProvider.class)
+	public void SearchFlightWithValidCountry(String from,String to,String date, String totalPassenger)
 	{
 		test = extent.createTest("Test Case 1", "PASSED test case");
 		test.log(Status.INFO, "Launch Browser");
+		count=count+1;
 		/*
 		 * Select From location
 		 * Select to Location
@@ -47,25 +54,30 @@ public class MakeMytripSearch extends BrowserLaunch{
 		 * Click OnSearch
 		 * Assert the result displayed for search criteria
 		 */
-
-		ClickFromLocation();
-		SelectDataFromList("PNQ");
-		test.log(Status.INFO, "Select the from location as PNQ");
-		ClickToLocation();
-		SelectDataFromList("MAA");
-		test.log(Status.INFO, "Select the to location as MAA");
-		SelectDate("12");
-		test.log(Status.INFO, "Select the Date as 25");
-		clickOnSearchButton();
+		MakeMyTripOneWaySearchPage M = new MakeMyTripOneWaySearchPage(browser);
+		M.ClickFromLocation();
+		M.SelectDataFromList(from);
+		test.log(Status.INFO, "Select the from location as :"+from);
+		M.ClickToLocation();
+		M.SelectDataFromList(to);
+		test.log(Status.INFO, "Select the to location as : "+to);
+		M.SelectDate(date);
+		test.log(Status.INFO, "Select the Date as " +date);
+		M.SelectTraveller(totalPassenger);
+		M.clickOnSearchButton();
 		test.log(Status.INFO, "SearchButton is cicked");
-		Assert.assertEquals(GetNetworkError(), "NETWORK PROBLEM ");
+		SearchReultPage sp = new SearchReultPage(browser);
+		Assert.assertEquals(sp.GetNetworkError(), "NETWORK PROBLEM");
+		filePath = webElementCommons.Screenshot(browser,"SearchFlightWithValidCountry"+count);
+		browser.navigate().back();
 		//test.log(Status.PASS, "SearchFlightWithValidCountry is completed");
 		
 	}
 	
-	@Test(priority=1)
-	public void SameCityErroValidation()
+	@Test(priority=1,dataProvider="SameCityValidationData",dataProviderClass=MakeMytripDataProvider.class)
+	public void SameCityErroValidation(String from,String to)
 	{
+		count=count+1;
 		test = extent.createTest("Test Case 2", "PASSED test case");
 		test.log(Status.INFO, "Launch Browser");
 		/*
@@ -75,22 +87,25 @@ public class MakeMytripSearch extends BrowserLaunch{
 		 * Click OnSearch
 		 * Assert the result displayed for search criteria
 		 */
-		browser.navigate().back();
-		ClickFromLocation();
-		SelectDataFromList("PNQ");
-		test.log(Status.INFO, "Select the from location as PNQ");
-		ClickToLocation();
-		SelectDataFromList("PNQ");
-		test.log(Status.INFO, "Select the to location as MAA");
-		Assert.assertEquals(GetSameCityError(), "From & To airports cannot be the same");
+		MakeMyTripOneWaySearchPage M = new MakeMyTripOneWaySearchPage(browser);
+		M.ClickFromLocation();
+		M.SelectDataFromList(from);
+		test.log(Status.INFO, "Select the from location as : "+from);
+		M.ClickToLocation();
+		M.SelectDataFromList(to);
+		test.log(Status.INFO, "Select the to location as : "+to);
+		Assert.assertEquals(M.GetSameCityError(), "From & To airports cannot be the same");
+		filePath = webElementCommons.Screenshot(browser,"SameCityErroValidation"+count);
 		//test.log(Status.PASS, "SearchFlightWithValidCountry is completed");
 		
 	}
 	
 	@AfterMethod
-	public void WriteInReport(ITestResult result)
+	public void WriteInReport(ITestResult result) throws IOException
 	{
 		if (result.getStatus()==ITestResult.SUCCESS) {
+			
+		     test.log(Status.INFO,test.addScreenCaptureFromPath(filePath).toString());
             test.log(Status.PASS,"Test Method named as : "+ result.getName()+" is passed");
 
         }else if(result.getStatus()==ITestResult.FAILURE) {
@@ -102,46 +117,9 @@ public class MakeMytripSearch extends BrowserLaunch{
         }
 	}
 	
-	public void ClickFromLocation()
-	{
-		webElementCommons.ExplictWaitForClickable(browser, 60, By.xpath("//*[@for='fromCity']"));
-		webElementCommons.ClickOnButton(browser.findElement(By.xpath("//*[@for='fromCity']")));	
-	}
 	
-	public void ClickToLocation()
-	{
-		webElementCommons.ExplictWaitForClickable(browser, 60, By.xpath("//*[@for='toCity']"));
-		webElementCommons.ClickOnButton(browser.findElement(By.xpath("//*[@for='toCity']")));	
-	}
+
 	
-	public void SelectDataFromList(String expectedCountryCode)
-	{
-		webElementCommons.SelectValueFromList(browser,expectedCountryCode);
-	}
-	
-	public void SelectDate(String expectedDate)
-	{
-		webElementCommons.SelectDateFromCalender(browser,expectedDate);
-	}
-	
-	public void clickOnSearchButton()
-	{
-		webElementCommons.ClickOnButton(browser.findElement(By.xpath("//*[@data-cy='submit']//a")));
-	}
-	
-	public String GetNetworkError()
-	{
-		webElementCommons.ExplictWaitForVisible(browser,60,By.xpath("//*[@class='error-title']"));
-		return webElementCommons.GetText(browser.findElement(By.xpath("//*[@class='error-title']")));
-		
-	}
-	
-	public String GetSameCityError()
-	{
-		webElementCommons.ExplictWaitForVisible(browser,60,By.xpath("//*[@data-cy='sameCityError']"));
-		return webElementCommons.GetText(browser.findElement(By.xpath("//*[@data-cy='sameCityError']")));
-		
-	}
 	
 	@AfterSuite
 	public void Teardown()

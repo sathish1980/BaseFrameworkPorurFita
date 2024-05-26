@@ -15,11 +15,11 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelFileRead {
 	
-	String filepath =System.getProperty("user.dir")+"\\Input\\";
+	static String filepath =System.getProperty("user.dir")+"\\Input\\";
 
 	List<Object> ls = new ArrayList<>();
-	String[][] excelData;
-	public String[][] ReadDataFromExcel(String filename,String Sheetname) throws IOException
+	static String[][] excelData;
+	public static String[][] ReadDataFromExcel(String filename,String Sheetname) throws IOException
 	{
 		File F = new File(filepath+filename);
 		FileInputStream Fs = new FileInputStream(F); // it will read all type os files
@@ -49,7 +49,7 @@ public class ExcelFileRead {
 	
 	
 	
-	public Object ReadDataAsSuch(Cell cellValue)
+	public static Object ReadDataAsSuch(Cell cellValue)
 	{
 		if(cellValue.getCellType()==CellType.STRING)
 		{
